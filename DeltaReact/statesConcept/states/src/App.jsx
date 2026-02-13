@@ -6,6 +6,9 @@ import Todo from './Todo'
 import Lottery from './lottery'
 import Lottery2 from './lottery2'
 import TicketNum from './ticketNum'
+import Form from './form'
+import Comment from './comment'
+import CommentForm from './commentForm'
 
 function App() {
 
@@ -21,6 +24,12 @@ function App() {
         <TicketNum no={2}/>
         <TicketNum no={3}/>
         <TicketNum no={4}/>
+        &nbsp;&nbsp;
+         <Form/>
+        &nbsp;&nbsp;
+         <Comment/>
+        
+
     </>
   )
 }
