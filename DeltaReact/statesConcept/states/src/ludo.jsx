@@ -1,46 +1,44 @@
 import { useState } from "react"
 
-export default function Ludo()
+export default function ludo()
 {
-        let [moves,setMoves] = useState({blue:0,red:0,yellow:0,green:0})
+      let [value,setValue] = useState({Blue:0,Green:0,Yellow:0,Red:0})
+        
+       function changeBlue()
+       {
+           setValue((prev)=>( {...prev ,Blue: prev.Blue+1}))
+       }
 
-         let updateBlue =() =>{
-            
-             setMoves((prevValue)=>{
-               return {...prevValue,blue:prevValue.blue +1}
-             }) //to detect the change in object we use spread operator 
-         }
-         let updatered =() =>{
-            
-             setMoves((prevValue)=>{
-               return {...prevValue,red:prevValue.red +1}
-             }) //to detect the change in object we use spread operator 
-         }
-         let updategreen =() =>{
-            
-             setMoves((prevValue)=>{
-               return {...prevValue,green:prevValue.green +=1}
-             }) //to detect the change in object we use spread operator 
-         }
-         let updateyellow =() =>{
-            
-             setMoves((prevValue)=>{
-               return {...prevValue,yellow:prevValue.yellow +=1}
-             }) //to detect the change in object we use spread operator 
-         }
+       function changeGreen()
+       {
+          setValue((prev)=>{return{...prev,Green:prev.Green+1}})
+       }
+       function changeYellow()
+       {
+          setValue((prev)=>({...prev,Yellow:prev.Yellow+1}))
+       }
+       function changeRed()
+       {
+          setValue((prev)=>{return{...prev,Red:prev.Red+1}})
+       }
 
-     return (
-        <>
-            <div className="board">
-                     <p>Blue={moves.blue}</p>
-                     <button onClick={updateBlue} style={{background:"blue", color:"white"}}>+1</button>
-                     <p>Red={moves.red}</p>
-                     <button onClick={updatered} style={{background:"red", color:"white"}}>+1</button>
-                     <p>Green={moves.green}</p>
-                     <button onClick={updategreen} style={{background:"green", color:"white"}}>+1</button>
-                     <p>Yellow={moves.yellow}</p>
-                     <button onClick={updateyellow} style={{background:"yellow", color:"blue"}}>+1</button>
-            </div>
-        </>
-     )
+       function change(event)
+       {
+          setValue((prev)=>({
+            ...prev,
+               [event.target.name]:prev[event.target.name]+1
+          }))
+       }
+
+    return( <>
+           <p>Blue={value.Blue}</p>
+           <button onClick={change} name="Blue" style={{color:"white", backgroundColor:"blue"}}>+1</button>
+           <p>Green={value.Green}</p>
+           <button onClick={change} name="Green" style={{color:"back", backgroundColor:"Green"}}>+1</button>
+           <p>Yellow={value.Yellow}</p>
+           <button onClick={change} name="Yellow" style={{color:"black", backgroundColor:"Yellow"}}>+1</button>
+           <p>Red={value.Red}</p>
+           <button onClick={change} name="Red" style={{color:"white", backgroundColor:"Red"}}>+1</button>
+     </>
+    )
 }

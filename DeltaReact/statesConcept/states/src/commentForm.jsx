@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 const validate = values => {
    const errors = {};
    if (!values.username) {
-     errors.username = 'Required';
+     errors.username = 'username required';
    } else if (values.username.length > 15) {
      errors.username = 'username required';
    }

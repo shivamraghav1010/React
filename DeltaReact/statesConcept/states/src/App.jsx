@@ -8,7 +8,9 @@ import Lottery2 from './lottery2'
 import TicketNum from './ticketNum'
 import Form from './form'
 import Comment from './comment'
-import CommentForm from './commentForm'
+import Counter from './counter'
+import Jokes from './Joker'
+import Delete from './delete'
 
 function App() {
 
@@ -28,6 +30,12 @@ function App() {
          <Form/>
         &nbsp;&nbsp;
          <Comment/>
+        &nbsp;&nbsp;
+         <Counter/>
+        &nbsp;&nbsp;
+         <Jokes/>
+        &nbsp;&nbsp;
+         <Delete/>
         
 
     </>
